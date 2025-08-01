@@ -3,7 +3,7 @@
 import React from "react";
 import Navbar from "./Components/shared/Navbar";
 import Footer from "./Components/shared/Footer"; 
-import { ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Leaf, ShoppingCart, Users } from "lucide-react";
 
 const HomePage = () => {
   const stats = [
@@ -11,6 +11,13 @@ const HomePage = () => {
     { number: "10K+", label: "Happy Customers" },
     { number: "50K+", label: "Orders Delivered" }
   ];
+
+  // Map string icons to actual imported components
+  const iconMap = {
+    ShoppingCart,
+    Users,
+    Leaf,
+  };
 
   const features = [
     { icon: "ShoppingCart", title: "Smart Inventory", desc: "Real-time stock management for local shops" },
@@ -24,7 +31,7 @@ const HomePage = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-white to-green-50">
-        {/* background patterns */}
+        {/* Background patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.05),transparent_50%)]"></div>
 
@@ -71,7 +78,64 @@ const HomePage = () => {
         <div className="absolute bottom-20 right-10 w-16 h-16 bg-black rounded-full opacity-20 animate-pulse"></div>
       </section>
 
-      {/* Add your other sections here: Features, How It Works, CTA, etc. */}
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+              Why Choose AgriCart?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience the future of local agricultural commerce with our innovative platform
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, index) => {
+              const IconComponent = iconMap[feature.icon];
+              return (
+                <div key={index} className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
+                  </div>
+                  <h3 className="text-2xl font-bold text-black mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-gradient-to-br from-black to-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">How AgriCart Works</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Simple steps to connect with fresh, local agricultural products
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: "01", title: "Browse Local Shops", desc: "Discover nearby agricultural vendors and their fresh product offerings" },
+              { step: "02", title: "Place Your Order", desc: "Select products, customize quantities, and place orders with ease" },
+              { step: "03", title: "Fresh Delivery", desc: "Receive your fresh agricultural products with guaranteed quality" }
+            ].map((item, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl font-bold text-white">{item.step}</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
 
       <Footer />
     </div>
