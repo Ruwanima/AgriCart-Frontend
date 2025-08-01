@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Leaf, Menu, X } from "lucide-react";
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,26 +35,25 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#features"
-              className="text-gray-700 hover:text-green-600 transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#about"
-              className="text-gray-700 hover:text-green-600 transition-colors"
-            >
-              About
-            </a>
+
+            <Link href="/" className="text-gray-700 hover:text-green-600 transition-colors">
+              Home
+               </Link>
+
+            <Link href="/Pages/about-us" className="text-gray-700 hover:text-green-600 transition-colors">
+              About Us
+            </Link>
+
+
+
             <a
               href="#contact"
               className="text-gray-700 hover:text-green-600 transition-colors"
             >
-              Contact
+              Contact 
             </a>
             <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105">
-              Get Started
+             Login
             </button>
           </div>
 
