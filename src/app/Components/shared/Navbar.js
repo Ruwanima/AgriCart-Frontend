@@ -43,15 +43,10 @@ const Navbar = () => {
             <Link href="/Pages/about-us" className="text-gray-700 hover:text-green-600 transition-colors">
               About Us
             </Link>
+            <Link href="/Pages/contact" className="text-gray-700 hover:text-green-600 transition-colors">
+              Contact
+            </Link>
 
-
-
-            <a
-              href="#contact"
-              className="text-gray-700 hover:text-green-600 transition-colors"
-            >
-              Contact 
-            </a>
             <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105">
              Login
             </button>
