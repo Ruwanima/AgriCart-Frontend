@@ -72,7 +72,7 @@ const Navbar = () => {
               Features
             </a>
             <a href="#about" className="block px-3 py-2 text-gray-700">
-              About
+              About US
             </a>
             <a href="#contact" className="block px-3 py-2 text-gray-700">
               Contact
