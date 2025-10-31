@@ -1,83 +1,87 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from 'react';
-import Navbar from "../../Components/shared/Navbar";
-import Footer from "../../Components/shared/Footer";
+import React, { useState, useEffect } from "react"
+import Navbar from "../../Components/shared/Navbar"
+import Footer from "../../Components/shared/Footer"
 
-import { Leaf, Shield, Heart, Globe, Lightbulb, ArrowRight, Users, Award, Target } from "lucide-react";
+import { Leaf, Shield, Heart, Globe, Lightbulb, ArrowRight, Users, Award, Target } from "lucide-react"
 
-const AgriCartAbout = () => {
-  const [scrollY, setScrollY] = useState(0);
+const AgriCartAbout: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const values = [
     {
       icon: Shield,
       title: "Quality Assurance",
-      description: "We ensure every product meets the highest standards of freshness and quality through rigorous vendor verification and customer feedback systems."
+      description:
+        "We ensure every product meets the highest standards of freshness and quality through rigorous vendor verification and customer feedback systems.",
     },
     {
       icon: Heart,
       title: "Community First",
-      description: "Supporting local farmers and shop owners is at the heart of everything we do. We believe in strengthening local economies and communities."
+      description:
+        "Supporting local farmers and shop owners is at the heart of everything we do. We believe in strengthening local economies and communities.",
     },
     {
       icon: Globe,
       title: "Sustainability",
-      description: "By connecting customers with local producers, we reduce transportation costs and environmental impact while promoting sustainable agriculture."
+      description:
+        "By connecting customers with local producers, we reduce transportation costs and environmental impact while promoting sustainable agriculture.",
     },
     {
       icon: Lightbulb,
       title: "Innovation",
-      description: "We continuously innovate to make agricultural commerce more efficient, transparent, and accessible for everyone in the supply chain."
-    }
-  ];
+      description:
+        "We continuously innovate to make agricultural commerce more efficient, transparent, and accessible for everyone in the supply chain.",
+    },
+  ]
 
   const teamMembers = [
     {
       name: "Sarah Johnson",
       role: "Founder & CEO",
       bio: "Agricultural engineer with 10+ years in sustainable farming and technology innovation.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=400&q=80",
     },
     {
       name: "Michael Chen",
       role: "CTO",
       bio: "Former tech lead at major e-commerce platforms, passionate about agricultural technology.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
     },
     {
       name: "Emily Rodriguez",
       role: "Head of Operations",
       bio: "Supply chain expert dedicated to connecting farmers with consumers efficiently.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
     },
     {
       name: "David Thompson",
       role: "Head of Partnerships",
       bio: "Community organizer focused on building relationships with local agricultural businesses.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
-    }
-  ];
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43c?w=400&q=80",
+    },
+  ]
 
   const milestones = [
     { year: "2022", title: "Company Founded", desc: "AgriCart was born from a vision to digitize local agriculture", icon: Target },
     { year: "2023", title: "First 100 Shops", desc: "Reached our first milestone of 100 partner shops", icon: Users },
     { year: "2024", title: "10K Customers", desc: "Celebrated serving over 10,000 happy customers", icon: Heart },
-    { year: "2025", title: "Expansion Phase", desc: "Expanding to new regions and adding innovative features", icon: Award }
-  ];
+    { year: "2025", title: "Expansion Phase", desc: "Expanding to new regions and adding innovative features", icon: Award },
+  ]
 
   const stats = [
     { number: "500+", label: "Partner Shops", desc: "Local agricultural businesses" },
     { number: "10K+", label: "Happy Customers", desc: "Satisfied community members" },
     { number: "50K+", label: "Orders Delivered", desc: "Fresh products delivered" },
-    { number: "15+", label: "Cities Served", desc: "Growing network coverage" }
-  ];
+    { number: "15+", label: "Cities Served", desc: "Growing network coverage" },
+  ]
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -88,20 +92,20 @@ const AgriCartAbout = () => {
         {/* Background patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.05),transparent_50%)]"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 text-center">
           <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-8 animate-pulse">
             <Leaf className="w-4 h-4 mr-2" />
             About AgriCart
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="block text-black">Revolutionizing</span>
             <span className="block bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
               Local Agriculture
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
             We're on a mission to bridge the gap between local agricultural producers and consumers, 
             creating sustainable communities while ensuring fresh, quality products reach every table.
@@ -129,9 +133,7 @@ const AgriCartAbout = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
-                  {stat.number}
-                </div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{stat.number}</div>
                 <div className="text-lg font-semibold text-gray-200 mb-1">{stat.label}</div>
                 <div className="text-sm text-gray-400">{stat.desc}</div>
               </div>
@@ -141,7 +143,7 @@ const AgriCartAbout = () => {
       </section>
 
       {/* Our Story Section */}
-      <section id="story" className="py-20 bg-gradient-to-br from-gray-100 via-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-gray-100 via-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -191,9 +193,7 @@ const AgriCartAbout = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide everything we do at AgriCart
-            </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide everything we do at AgriCart</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -215,9 +215,7 @@ const AgriCartAbout = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Our Journey</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Key milestones in our mission to transform local agriculture
-            </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Key milestones in our mission to transform local agriculture</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -235,11 +233,9 @@ const AgriCartAbout = () => {
         </div>
       </section>
 
-
-
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default AgriCartAbout;
+export default AgriCartAbout
