@@ -1,26 +1,26 @@
-"use client";
-import React from "react";
-import { 
-  Leaf, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+"use client"
+
+import React from "react"
+import {
+  Leaf,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
   Youtube,
   CreditCard,
   Shield,
-  Truck
-} from "lucide-react";
+  Truck,
+} from "lucide-react"
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-br from-green-800 via-green-700 to-green-900 text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
           {/* Company Info & Mission */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
@@ -30,19 +30,37 @@ const Footer = () => {
               <span className="text-2xl font-bold">AgriCart</span>
             </div>
             <p className="text-green-100 mb-6 leading-relaxed">
-              To offer our ultimate gratitude towards this amazing nature by providing the best agricultural plants and products in order to sustain a greener future.
+              To offer our ultimate gratitude towards this amazing nature by
+              providing the best agricultural plants and products in order to
+              sustain a greener future.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200">
+              <a
+                href="#"
+                aria-label="Twitter"
+                className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200">
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200">
+              <a
+                href="#"
+                aria-label="YouTube"
+                className="w-10 h-10 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors duration-200"
+              >
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -50,52 +68,97 @@ const Footer = () => {
 
           {/* Useful Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-green-100">Useful Links</h3>
+            <h3 className="text-lg font-semibold mb-6 text-green-100">
+              Useful Links
+            </h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">About Us</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Shop</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Blog</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Contact Us</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Help Center</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Farming Tips</a></li>
+              {[
+                "About Us",
+                "Shop",
+                "Blog",
+                "Contact Us",
+                "Help Center",
+                "Farming Tips",
+              ].map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="text-green-200 hover:text-white transition-colors duration-200"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Categories */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-green-100">Categories</h3>
+            <h3 className="text-lg font-semibold mb-6 text-green-100">
+              Categories
+            </h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Fruit Plants</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Forest Plants</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Medicinal Plants</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Flowers & Exotic Plants</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Spice Plants</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Cactus & Succulents</a></li>
+              {[
+                "Fruit Plants",
+                "Forest Plants",
+                "Medicinal Plants",
+                "Flowers & Exotic Plants",
+                "Spice Plants",
+                "Cactus & Succulents",
+              ].map((category) => (
+                <li key={category}>
+                  <a
+                    href="#"
+                    className="text-green-200 hover:text-white transition-colors duration-200"
+                  >
+                    {category}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-green-100">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-6 text-green-100">
+              Contact Us
+            </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-green-300 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-green-200">No 205/1, Jaya Mawatha, Kandawala,</p>
+                  <p className="text-green-200">
+                    No 205/1, Jaya Mawatha, Kandawala,
+                  </p>
                   <p className="text-green-200">Katana, Sri Lanka</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-300" />
-                <a href="tel:+94777994859" className="text-green-200 hover:text-white transition-colors duration-200">+94 777 99 48 59</a>
+                <a
+                  href="tel:+94777994859"
+                  className="text-green-200 hover:text-white transition-colors duration-200"
+                >
+                  +94 777 99 48 59
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-green-300" />
-                <a href="mailto:info@agricart.lk" className="text-green-200 hover:text-white transition-colors duration-200">info@agricart.lk</a>
+                <a
+                  href="mailto:info@agricart.lk"
+                  className="text-green-200 hover:text-white transition-colors duration-200"
+                >
+                  info@agricart.lk
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-green-300" />
-                <a href="mailto:tmcagricart@gmail.com" className="text-green-200 hover:text-white transition-colors duration-200">tmcagricart@gmail.com</a>
+                <a
+                  href="mailto:tmcagricart@gmail.com"
+                  className="text-green-200 hover:text-white transition-colors duration-200"
+                >
+                  tmcagricart@gmail.com
+                </a>
               </div>
             </div>
           </div>
@@ -104,10 +167,11 @@ const Footer = () => {
         {/* Payment Methods & Trust Indicators */}
         <div className="mt-12 pt-8 border-t border-green-600">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-            
             {/* Payment Methods */}
             <div>
-              <h4 className="text-sm font-semibold text-green-100 mb-3">Payment Methods:</h4>
+              <h4 className="text-sm font-semibold text-green-100 mb-3">
+                Payment Methods:
+              </h4>
               <div className="flex space-x-3">
                 <div className="w-12 h-8 bg-white rounded flex items-center justify-center">
                   <span className="text-blue-600 font-bold text-xs">VISA</span>
@@ -139,26 +203,41 @@ const Footer = () => {
             {/* Legal Links */}
             <div className="flex flex-col space-y-2 text-center lg:text-right">
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
-                <a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Terms and Conditions</a>
-                <a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Privacy Policy</a>
-                <a href="#" className="text-green-200 hover:text-white transition-colors duration-200">Refund Policy</a>
+                <a
+                  href="#"
+                  className="text-green-200 hover:text-white transition-colors duration-200"
+                >
+                  Terms and Conditions
+                </a>
+                <a
+                  href="#"
+                  className="text-green-200 hover:text-white transition-colors duration-200"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#"
+                  className="text-green-200 hover:text-white transition-colors duration-200"
+                >
+                  Refund Policy
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Copyright Bar */}
+      {/* Bottom Copyright */}
       <div className="bg-green-900 border-t border-green-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-green-300">
-            <p>&copy; 2025 AgriCart. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} AgriCart. All rights reserved.</p>
             <p>Connecting communities through fresh agriculture.</p>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
